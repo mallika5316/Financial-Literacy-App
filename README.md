@@ -1,86 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Literacy App</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        ul {
-            list-style-type: square;
-            margin-left: 20px;
-        }
-        code {
-            background-color: #eef;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>ALVA'S INSTITUTE OF ENGINEERING AND TECHNOLOGY</h1>
-        <h2>AIET TECH MASTERS</h2>
-        <h3>Team Members:</h3>
-        <ul>
-            <li>Pooja KR</li>
-            <li>Mallika K</li>
-            <li>Priyanka IS</li>
-        </ul>
-        
-        <h2>Problem Statement</h2>
-        <p><strong>Theme:</strong> Improving Customer Experience in Banking</p>
-        <p><strong>Problem Statement:</strong> Financial Literacy App for Young People</p>
-        
-        <h2>🌟 Features</h2>
-        <ul>
-            <li>Financial Blogs and Quizzes</li>
-            <li>Parental Controls</li>
-            <li>AI-Powered Consultant</li>
-            <li>Budgeting Basics, Saving Strategies, Credit Management, Introduction to Investing</li>
-        </ul>
-        
-        <h2>📌 Instructions on Running the Project</h2>
-        <p>Follow these steps to set up and run the Financial Literacy App on your local machine:</p>
-        
-        <h3>Requirements</h3>
-        <h4>Frontend Web Development:</h4>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Bootstrap</li>
-        </ul>
-        
-        <h4>API:</h4>
-        <ul>
-            <li>OpenAI</li>
-        </ul>
-        
-        <h4>Backend Web Development:</h4>
-        <ul>
-            <li>Python</li>
-        </ul>
-        
-        <h2>🔍 Conclusion</h2>
-        <p>The Financial Literacy App is designed to empower users to take control of their financial well-being through an intuitive and engaging platform. By integrating features such as expense tracking, budgeting tools, investment management, and real-time financial tips, the app provides users with the resources they need to make informed financial decisions.</p>
-    </div>
-</body>
-</html>
+# 📊 Financial Literacy App  
+
+## 🏫 ALVA'S INSTITUTE OF ENGINEERING AND TECHNOLOGY  
+**Team:** AIET TECH MASTERS  
+**Team Members:**  
+- Pooja KR  
+- Mallika K  
+- Priyanka IS  
+
+---
+
+## 🚀 Problem Statement  
+**Theme:** Improving Customer Experience in Banking  
+**Challenge:** Developing a **Financial Literacy App for Young People** to enhance their understanding of finance through interactive tools and AI-powered guidance.  
+
+---
+
+## ✨ Features  
+- 📚 **Financial Blogs and Quizzes** – Learn finance concepts interactively.  
+- 👨‍👩‍👧 **Parental Controls** – Helps parents monitor and guide financial learning.  
+- 🤖 **AI-Powered Consultant** – Provides personalized financial advice.   
+
+---
+
+## 🛠️ Instructions on Running the Project  
+
+### 📌 Requirements  
+
+#### **Frontend Web Development**  
+- HTML  
+- CSS  
+- JavaScript  
+- Bootstrap  
+
+#### **Backend Web Development**  
+- Python  
+
+#### **API**  
+- OpenAI  
