@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="quiz-result-container">
+    <h2>Quiz Result</h2>
+
+    <div class="score-display">
+        <p>You scored <span class="score-highlight">{{ score }}</span> out of 2!</p>
+        <div class="progress-bar">
+            <div class="progress-bar-fill score-{{ score_percentage }}"></div>
+        </div>
+    </div>
+
+    <div class="quiz-options">
+        <a href="{{ url_for('quiz') }}" class="try-again-button">Try Again</a>
+        <a href="{{ url_for('home') }}" class="home-button">Home</a>
+    </div>
+</div>
+
+<style>
+    .quiz-result-container {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .score-display {
+        margin-bottom: 20px;
+    }
+
+    .score-highlight {
+        font-size: 24px;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .progress-bar {
+        width: 200px;
+        height: 20px;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+    }
+
+    .progress-bar-fill {
+        height: 100%;
+        background-color: #4CAF50;
+        border-radius: 5px;
+    }
+
+    .quiz-options {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .try-again-button, .home-button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .try-again-button {
+        background-color: #007bff;
+    }
+
+    .home-button {
+        background-color: #4CAF50;
+    }
+
+    /* New CSS class for dynamic width */
+    
+</style>
+{% endblock %}

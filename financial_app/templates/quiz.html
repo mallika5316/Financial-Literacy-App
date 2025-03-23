@@ -1,0 +1,336 @@
+{% extends 'layout.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgeting Basics</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: #4a90e2;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        section {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 5px;
+        }
+        .quiz-section {
+            margin-bottom: 30px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .option {
+            margin: 10px 0;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .quiz-button {
+            background: #4a90e2;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .quiz-button:hover {
+            background: #357ab8;
+        }
+        #quiz-result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            color: #777;
+        }
+        .tab-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tab-button {
+            padding: 10px 20px;
+            border: none;
+            background: #e9ecef;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .tab-button.active {
+            background: #4a90e2;
+            color: white;
+        }
+        .quiz-container {
+            display: none;
+        }
+        .quiz-container.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Financial Education Quiz</h1>
+        <p>Test your knowledge on personal finance</p>
+    </header>
+
+    <section id="quiz-tabs">
+        <div class="tab-buttons">
+            <button class="tab-button active" onclick="showQuiz('budgeting')">Budgeting Basics</button>
+            <button class="tab-button" onclick="showQuiz('savings')">Savings Strategies</button>
+            <button class="tab-button" onclick="showQuiz('credit')">Credit Management</button>
+            <button class="tab-button" onclick="showQuiz('investing')">Introduction to Investing</button>
+        </div>
+    </section>
+
+    <section id="budgeting-quiz" class="quiz-container active">
+        <h2>Budgeting Basics Quiz</h2>
+        <form id="budgeting-form">
+            <div class="question">
+                <p>1. What is a budget?</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="q1" value="A"> A. A detailed plan for managing income and expenses</div>
+                    <div class="option"><input type="radio" name="q1" value="B"> B. A list of investments</div>
+                    <div class="option"><input type="radio" name="q1" value="C"> C. A tool for saving only</div>
+                    <div class="option"><input type="radio" name="q1" value="D"> D. An estimate of future income only</div>
+                </div>
+            </div>
+            <div class="question">
+                <p>2. Which of the following is a fixed expense?</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="q2" value="A"> A. Monthly rent</div>
+                    <div class="option"><input type="radio" name="q2" value="B"> B. Grocery bills</div>
+                    <div class="option"><input type="radio" name="q2" value="C"> C. Entertainment costs</div>
+                    <div class="option"><input type="radio" name="q2" value="D"> D. Utilities</div>
+                </div>
+            </div>
+            <div class="question">
+                <p>3. What percentage of your income is typically recommended to save?</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="q3" value="A"> A. 5%</div>
+                    <div class="option"><input type="radio" name="q3" value="B"> B. 10%</div>
+                    <div class="option"><input type="radio" name="q3" value="C"> C. 20%</div>
+                    <div class="option"><input type="radio" name="q3" value="D"> D. 30%</div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section id="savings-quiz" class="quiz-container">
+        <h2>Savings Strategies Quiz</h2>
+        <form id="savings-form">
+            <div class="question">
+                <p>1. What is the primary purpose of an emergency fund?</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="s1" value="A"> A. To pay for vacations</div>
+                    <div class="option"><input type="radio" name="s1" value="B"> B. To cover unexpected expenses</div>
+                    <div class="option"><input type="radio" name="s1" value="C"> C. To invest in stocks</div>
+                    <div class="option"><input type="radio" name="s1" value="D"> B. To pay monthly bills</div>
+                </div>
+            </div>
+            <div class="question">
+                <p>2. What is a high-yield savings account?</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="s2" value="A"> A. An account with low interest rates</div>
+                    <div class="option"><input type="radio" name="s2" value="B"> B. An account that offers higher interest rates than traditional savings accounts</div>
+                    <div class="option"><input type="radio" name="s2" value="C"> C. An account used for everyday expenses</div>
+                    <div class="option"><input type="radio" name="s2" value="D"> D. An investment account</div>
+                </div>
+            </div>
+            <div class="question">
+                <p>3. Which method encourages regular savings?</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="s3" value="A"> A. The envelope method</div>
+                    <div class="option"><input type="radio" name="s3" value="B"> B. The 50/30/20 rule</div>
+                    <div class="option"><input type="radio" name="s3" value="C"> C. Automatic transfers</div>
+                    <div class="option"><input type="radio" name="s3" value="D"> D. All of the above</div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section id="credit-quiz" class="quiz-container">
+        <h2>Credit Management Quiz</h2>
+        <form id="credit-form">
+            <div class="question">
+                <p>1. What is a credit score used for?</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="c1" value="A"> A. To measure your savings goals</div>
+                    <div class="option"><input type="radio" name="c1" value="B"> B. To track your spending habits</div>
+                    <div class="option"><input type="radio" name="c1" value="C"> C. To assess your creditworthiness for loans</div>
+                    <div class="option"><input type="radio" name="c1" value="D"> D. To calculate your tax liability</div>
+                </div>
+            </div>
+            <div class="question">
+                <p>2. What factor does NOT affect your credit score?</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="c2" value="A"> A. Payment history</div>
+                    <div class="option"><input type="radio" name="c2" value="B"> B. Amount of debt</div>
+                    <div class="option"><input type="radio" name="c2" value="C"> C. Age of your credit accounts</div>
+                    <div class="option"><input type="radio" name="c2" value="D"> D. Your income level</div>
+                </div>
+            </div>
+            <div class="question">
+                <p>3. What is a secured credit card?</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="c3" value="A"> A. A card that requires a cash deposit as collateral</div>
+                    <div class="option"><input type="radio" name="c3" value="B"> B. A card that offers cash back rewards</div>
+                    <div class="option"><input type="radio" name="c3" value="C"> C. A card with no credit limit</div>
+                    <div class="option"><input type="radio" name="c3" value="D"> D. A card for business expenses only</div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section id="investing-quiz" class="quiz-container">
+        <h2>Introduction to Investing Quiz</h2>
+        <form id="investing-form">
+            <div class="question">
+                <p>1. What is investing?</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="i1" value="A"> A. Spending money on goods and services</div>
+                    <div class="option"><input type="radio" name="i1" value="B"> B. Setting aside money with the expectation of earning a profit or gain</div>
+                    <div class="option"><input type="radio" name="i1" value="C"> C. Saving money in a bank account for future use</div>
+                    <div class="option"><input type="radio" name="i1" value="D"> D. Borrowing money for a large purchase</div>
+                </div>
+            </div>
+            <div class="question">
+                <p>2. What is a stock?</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="i2" value="A"> A. A loan to a company</div>
+                    <div class="option"><input type="radio" name="i2" value="B"> B. A share of ownership in a company</div>
+                    <div class="option"><input type="radio" name="i2" value="C"> C. A type of savings account</div>
+                    <div class="option"><input type="radio" name="i2" value="D"> D. A form of real estate investment</div>
+                </div>
+            </div>
+            <div class="question">
+                <p>3. What is diversification in investing?</p>
+                <div class="options">
+                    <div class="option"><input type="radio" name="i3" value="A"> A. Investing all money in one stock</div>
+                    <div class="option"><input type="radio" name="i3" value="B"> B. Spreading investments across various asset classes</div>
+                    <div class="option"><input type="radio" name="i3" value="C"> C. Only investing in bonds</div>
+                    <div class="option"><input type="radio" name="i3" value="D"> D. Investing in international markets only</div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <div class="quiz-button-container" style="text-align: center;">
+        <button class="quiz-button" onclick="submitQuiz()">Submit Quiz</button>
+    </div>
+
+    <div id="quiz-result"></div>
+
+    <footer>
+        <p>© 2024 Financial Education Portal</p>
+    </footer>
+
+    <script>
+        function showQuiz(topic) {
+            document.querySelectorAll('.quiz-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            document.getElementById(topic + '-quiz').classList.add('active');
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    
+        function submitQuiz() {
+            const activeQuiz = document.querySelector('.quiz-container.active');
+            const quizId = activeQuiz.id;
+            const form = document.getElementById(quizId.split('-')[0] + '-form');
+            const questions = form.querySelectorAll('.question');
+    
+            let score = 0;
+            let total = questions.length;
+    
+            const correctAnswers = {
+                'budgeting': {
+                    'q1': 'A',
+                    'q2': 'A',
+                    'q3': 'C'
+                },
+                'savings': {
+                    's1': 'B',
+                    's2': 'B',
+                    's3': 'D'
+                },
+                'credit': {
+                    'c1': 'C',
+                    'c2': 'D',
+                    'c3': 'A'
+                },
+                'investing': {
+                    'i1': 'B',
+                    'i2': 'B',
+                    'i3': 'B'
+                }
+            };
+    
+            questions.forEach((question, index) => {
+                const selectedOption = question.querySelector('input[type="radio"]:checked');
+                const questionKey = quizId.split('-')[0] + (index + 1); // e.g., 'q1', 's1', etc.
+    
+                if (selectedOption && selectedOption.value === correctAnswers[quizId.split('-')[0]][questionKey]) {
+                    score++;
+                }
+            });
+    
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = 'You scored ' + score + ' out of ' + total + ' questions correctly!';
+            resultDiv.className = score > (total / 2) ? 'correct' : 'incorrect';
+        }
+    </script>
+    
+    
+</body>
+</html>
+{% endblock %}

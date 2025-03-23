@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Education Portal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .lesson-card {
+            transition: transform 0.2s ease-in-out;
+        }
+        .lesson-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    {% extends 'layout.html' %}
+    {% block content %}
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Financial Education Center</h1>
+            <p class="text-gray-600 text-lg">Master your finances with our comprehensive learning paths</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Budgeting Card -->
+            <div class="lesson-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Budgeting Basics</h3>
+                    <p class="text-gray-600 mb-4">Learn fundamental budgeting principles and create your financial plan</p>
+                    <a href="{{ url_for('budgeting') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">Start Learning</a>
+                </div>
+            </div>
+
+            <!-- Saving Strategies Card -->
+            <div class="lesson-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Saving Strategies</h3>
+                    <p class="text-gray-600 mb-4">Discover effective methods to save money and build your emergency fund</p>
+                    <a href="{{ url_for('budgeting') }}" class="inline-block bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors">Start Learning</a>
+                </div>
+            </div>
+
+            <!-- Credit Management Card -->
+            <div class="lesson-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Credit Management</h3>
+                    <p class="text-gray-600 mb-4">Master your credit score and learn responsible credit card usage</p>
+                    <a href="{{ url_for('budgeting') }}" class="inline-block bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600 transition-colors">Start Learning</a>
+                </div>
+            </div>
+
+            <!-- Investing Card -->
+            <div class="lesson-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Introduction to Investing</h3>
+                    <p class="text-gray-600 mb-4">Learn the basics of investing and growing your wealth long-term</p>
+                    <a href="{{ url_for('budgeting') }}" class="inline-block bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-colors">Start Learning</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <p class="text-gray-600">Ready to take control of your financial future?</p>
+            <button class="mt-4 bg-indigo-500 text-white px-6 py-3 rounded-md hover:bg-indigo-600 transition-colors">
+                Track Your Progress
+            </button>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

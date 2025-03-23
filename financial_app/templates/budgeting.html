@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgeting Basics</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: #4a90e2;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        section {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 5px;
+        }
+        ol {
+            margin-left: 20px;
+        }
+        input[type="text"] {
+            padding: 12px;
+            margin: 5px 0 20px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border 0.3s;
+        }
+        input[type="text"]:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+        input[type="submit"], .quiz-button {
+            background: #4a90e2;
+            color: #ffffff;
+            border: none;
+            padding: 12px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        input[type="submit"]:hover, .quiz-button:hover {
+            background: #357ab8;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+        }
+        .leaderboard {
+            background: linear-gradient(45deg, #4a90e2, #357ab8);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .leaderboard h2 {
+            color: white;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        .leaderboard-list {
+            list-style: none;
+            padding: 0;
+        }
+        .leaderboard-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        .leaderboard-item:hover {
+            transform: translateX(5px);
+        }
+        .rank {
+            font-weight: bold;
+            font-size: 1.2em;
+            min-width: 30px;
+        }
+        .score {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+        .name {
+            flex-grow: 1;
+            margin: 0 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Budgeting Basics</h1>
+        <p>Your guide to effective money management</p>
+    </header>
+
+    <section id="content">
+        <h2>What is Budgeting?</h2>
+        <p>Budgeting is the process of creating a plan to spend your money. This plan is called a budget. It helps you prioritize your spending and save for future goals.</p>
+
+        <h2>Steps to Create a Budget</h2>
+        <ol>
+            <li>Determine your income</li>
+            <li>Track your expenses</li>
+            <li>Set your financial goals</li>
+            <li>Create a budget plan</li>
+            <li>Review and adjust regularly</li>
+        </ol>
+    </section>
+
+    <section id="understanding">
+        <h2>Assess Your Understanding</h2>
+        <p>Now that you've read the material, how well do you feel you understand budgeting?</p>
+        <button class="quiz-button" onclick="showQuiz()">Take the Quiz</button>
+    </section>
+
+    <section id="quiz" style="display:none;">
+        <h2>Quiz: Test Your Knowledge!</h2>
+        <form id="quizForm">
+            <div class="quiz-question">
+                <p>1. What is a budget?</p>
+                <div class="quiz-options">
+                    <div class="option"><input type="radio" name="q1" value="A"> A) A detailed plan for managing income and expenses</div>
+                    <div class="option"><input type="radio" name="q1" value="B"> B) A list of investments</div>
+                    <div class="option"><input type="radio" name="q1" value="C"> C) A tool for saving only</div>
+                    <div class="option"><input type="radio" name="q1" value="D"> D) An estimate of future income only</div>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>2. Which of the following is NOT a component of a budget?</p>
+                <div class="quiz-options">
+                    <div class="option"><input type="radio" name="q2" value="A"> A) Income</div>
+                    <div class="option"><input type="radio" name="q2" value="B"> B) Expenses</div>
+                    <div class="option"><input type="radio" name="q2" value="C"> C) Savings</div>
+                    <div class="option"><input type="radio" name="q2" value="D"> D) Stock market performance</div>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. What is a fixed expense?</p>
+                <div class="quiz-options">
+                    <div class="option"><input type="radio" name="q3" value="A"> A) An expense that varies each month</div>
+                    <div class="option"><input type="radio" name="q3" value="B"> B) An expense that remains the same each month</div>
+                    <div class="option"><input type="radio" name="q3" value="C"> C) An expense that is optional</div>
+                    <div class="option"><input type="radio" name="q3" value="D"> D) An expense that occurs annually only</div>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>4. Which method can help in creating a budget?</p>
+                <div class="quiz-options">
+                    <div class="option"><input type="radio" name="q4" value="A"> A) The 50/30/20 rule</div>
+                    <div class="option"><input type="radio" name="q4" value="B"> B) The 70/20/10 rule</div>
+                    <div class="option"><input type="radio" name="q4" value="C"> C) The 90/5/5 rule</div>
+                    <div class="option"><input type="radio" name="q4" value="D"> D) The 60/20/20 rule</div>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>5. Why is it important to track your spending?</p>
+                <div class="quiz-options">
+                    <div class="option"><input type="radio" name="q5" value="A"> A) To ensure you spend more money</div>
+                    <div class="option"><input type="radio" name="q5" value="B"> B) To identify areas where you can save</div>
+                    <div class="option"><input type="radio" name="q5" value="C"> C) To impress your friends</div>
+                    <div class="option"><input type="radio" name="q5" value="D"> D) To avoid paying taxes</div>
+                </div>
+            </div>
+
+            <input type="text" id="playerName" placeholder="Enter your name" required>
+            <input type="submit" value="Submit">
+        </form>
+        <div id="result" style="display:none;"></div>
+    </section>
+
+    <section id="leaderboard" class="leaderboard" style="display:none;">
+        <h2>Top Performers</h2>
+        <ul class="leaderboard-list" id="leaderboardList">
+        </ul>
+    </section>
+
+    <footer>
+        <a href="/lessons" style="color: #4a90e2;">Back to Lessons</a>
+    </footer>
+
+    <script>
+        // Initialize leaderboard data in localStorage if it doesn't exist
+        if (!localStorage.getItem('quizLeaderboard')) {
+            localStorage.setItem('quizLeaderboard', JSON.stringify([]));
+        }
+
+        function showQuiz() {
+            document.getElementById('understanding').style.display = 'none';
+            document.getElementById('quiz').style.display = 'block';
+        }
+
+        function updateLeaderboard(name, score) {
+            let leaderboard = JSON.parse(localStorage.getItem('quizLeaderboard'));
+            leaderboard.push({ name, score, timestamp: Date.now() });
+            
+            // Sort by score (descending) and then by timestamp (ascending)
+            leaderboard.sort((a, b) => b.score - a.score || a.timestamp - b.timestamp);
+            
+            // Keep only top 10 scores
+            leaderboard = leaderboard.slice(0, 10);
+            
+            localStorage.setItem('quizLeaderboard', JSON.stringify(leaderboard));
+            displayLeaderboard();
+        }
+
+        function displayLeaderboard() {
+            const leaderboard = JSON.parse(localStorage.getItem('quizLeaderboard'));
+            const leaderboardSection = document.getElementById('leaderboard');
+            const leaderboardList = document.getElementById('leaderboardList');
+            
+            leaderboardList.innerHTML = '';
+            leaderboard.forEach((entry, index) => {
+                const li = document.createElement('li');
+                li.className = 'leaderboard-item';
+                li.innerHTML = `
+                    <span class="rank">#${index + 1}</span>
+                    <span class="name">${entry.name}</span>
+                    <span class="score">${entry.score}/5</span>
+                `;
+                leaderboardList.appendChild(li);
+            });
+            
+            leaderboardSection.style.display = 'block';
+        }
+
+        document.getElementById('quizForm').onsubmit = function(event) {
+            event.preventDefault();
+            
+            const correctAnswers = {
+                q1: "A",
+                q2: "D",
+                q3: "B",
+                q4: "A",
+                q5: "B"
+            };
+
+            let score = 0;
+            
+            // Check answers
+            for (let question in correctAnswers) {
+                const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            const playerName = document.getElementById('playerName').value;
+            
+            // Display result
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.className = 'success';
+            resultDiv.innerHTML = `Congratulations ${playerName}! You scored ${score} out of 5.`;
+
+            // Update leaderboard
+            updateLeaderboard(playerName, score);
+        };
+    </script>
+</body>
+</html>
