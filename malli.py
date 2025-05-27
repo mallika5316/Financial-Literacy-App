@@ -1,7 +1,7 @@
 from groq import Groq
 
 # Set the Groq API key
-groq_client = Groq(api_key="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")
+groq_client = Groq(add Your API)
 
 # Function to send user's message to Groq for response
 def send_to_groq(messages, model="llama3-8b-8192"):
